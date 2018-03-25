@@ -1,6 +1,6 @@
 This tool allow you to search artists, albuns and tracks and send to **SMLoadr** with a command line. 
 
-**OBS.: This software do not download music. The main function is search artists/albuns/tracks!**
+**OBS.: This software do not download music. The main function is search artists/albuns/tracks and send to SMLoadr!**
 
 How to use: 
 
