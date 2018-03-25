@@ -1,4 +1,4 @@
-This tool allow you to search artists, albuns and tracks and send to **SMLoader** with a command line. 
+This tool allow you to search artists, albuns and tracks and send to **SMLoadr** with a command line. 
 How to use: 
 
 1 - Open the program ![See Image](https://imgur.com/iqxo1yL.png)
