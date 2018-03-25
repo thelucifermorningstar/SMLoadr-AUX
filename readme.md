@@ -14,6 +14,7 @@ How to use:
 
 5 - It's done!  
 
+# [DOwNLOAD](https://github.com/thelucifermorningstar/SMLoadr-AUX/releases) 
 
 **Coded in Hell by Lucifer**  
 Set free some souls today: Donate!  
