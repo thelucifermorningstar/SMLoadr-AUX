@@ -14,7 +14,7 @@ How to use:
 
 5 - It's done!  
 
-# [DOwNLOAD](https://github.com/thelucifermorningstar/SMLoadr-AUX/releases) 
+# [DOWNLOAD](https://github.com/thelucifermorningstar/SMLoadr-AUX/releases)  
 
 **Coded in Hell by Lucifer**  
 Set free some souls today: Donate!  
@@ -23,7 +23,7 @@ Set free some souls today: Donate!
 **Ether:** 0x09c5059e19db51ff27B0d9E4AE547242Edb2b4CD  
 
 
-Bug Reports to: themorningstarproject666@gmail.com  
+**Contact: themorningstarproject666@gmail.com**
 
 Cheers,  
 The Devil ;)
