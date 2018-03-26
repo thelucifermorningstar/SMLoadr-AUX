@@ -4,15 +4,22 @@ This tool allow you to search artists, albuns and tracks and send to **SMLoadr**
 
 How to use: 
 
-1 - Open the program ![See Image](https://imgur.com/iqxo1yL.png)  
+1 - Open the program ![See Image](https://imgur.com/DjTAsUc.png)  
 
-2 - Select a SMLoadr executable Location ([Download SMLoadr](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/uz7mFL7.png)  
+2 - Select a SMLoadr executable Location ([Download SMLoadr](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/AA7b33P.png)  
 
-3 - Ready to Search Music ![See Image](https://imgur.com/o6ASTbN.png)  
+3 - Ready to Search Music ![See Image](https://imgur.com/AiCbVu3.png)  
 
-4 - Select the artist/album/track, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/F6ej47f.png)  
+4 - You can double click the artist to see the albuns, and double click albuns to see tracks ![See Image](https://imgur.com/pJBTTZb.png) 
 
-5 - It's done!  
+5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/lc2kIrI.png)
+
+6 - Select the artist/album/track, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/9ewecCl.png)  
+
+
+
+
+7 - It's done!  
 
 # [DOWNLOAD](https://github.com/thelucifermorningstar/SMLoadr-AUX/releases)  
 
