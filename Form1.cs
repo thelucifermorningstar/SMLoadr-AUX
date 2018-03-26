@@ -24,7 +24,11 @@ namespace SMLoader
 
 
             bgw_check_version.RunWorkerAsync();
-            
+
+            pbx_loading.Visible = true;
+
+
+
             cmb_quality.SelectedIndex = Settings.Default.qual;
             cmb_limit_results.SelectedIndex = Settings.Default.results;
 
@@ -33,7 +37,7 @@ namespace SMLoader
                 String path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
                 Settings.Default.download = path + @"\SM\";
                 Settings.Default.Save();
-               
+
             }
 
             txb_download_folder.Text = Settings.Default.download;
@@ -45,7 +49,17 @@ namespace SMLoader
                 tabControl1.SelectTab(tabControl1.TabPages[1]);
             }
 
+
+
+            txb_search.Text = "Chart";
+            chart = true;
+            limit = cmb_limit_results.Text;
+            xmln = "/root/artists/data/artist";
+            bgw_chart.RunWorkerAsync();
+
         }
+
+        bool chart;
 
         //------------------------------------------
 
@@ -60,11 +74,11 @@ namespace SMLoader
 
         private void btn_go_Click(object sender, EventArgs e)
         {
-            if (txb_search.Text != "" && lb_result.Items.Count > 0 )
+            if (txb_search.Text != "" && lb_result.Items.Count > 0)
             {
                 if (Settings.Default.sm != "")
                 {
-                    manager.download(txb_search, cmb_quality, lb_result, download, info);
+                    manager.download(lbl_status, txb_search, cmb_quality, lb_result, download, info);
                 }
                 else
                 {
@@ -93,7 +107,8 @@ namespace SMLoader
                         pbx_artist.ImageLocation = infoc[lastPos2].picture;
                         lbl_status.Text = "Download: " + info[lb_result.SelectedIndex].name;
                         lbl_info.Text = infoc[lastPos2].name;
-                        if(play == true)
+                        lbl_link.Text = info[lb_result.SelectedIndex].link;
+                        if (play == true)
                         {
                             axWindowsMediaPlayer1.URL = info[lb_result.SelectedIndex].preview;
                         }
@@ -103,18 +118,19 @@ namespace SMLoader
                 {
                     if (lb_result.SelectedIndex >= 0)
                     {
-
+                        lbl_link.Text = info[lb_result.SelectedIndex].link;
                         pbx_artist.ImageLocation = info[lb_result.SelectedIndex].picture;
                         lbl_status.Text = "Download: " + info[lb_result.SelectedIndex].name;
                         lbl_info.Text = info[lb_result.SelectedIndex].name;
                     }
                 }
             }
-            catch {
+            catch
+            {
             }
         }
 
-       
+
         List<list.Info> info = new List<list.Info>();
         List<list.InfoB> infob = new List<list.InfoB>();
         List<list.InfoC> infoc = new List<list.InfoC>();
@@ -129,47 +145,56 @@ namespace SMLoader
             search = txb_search.Text;
             limit = cmb_limit_results.Text;
 
-            
+            res = false;
+
+
             if (rbt_artist.Checked == true)
             {
-                     start_artist = true;
-                    lb_result.Items.Clear();
-                    info.Clear();
-                    if (!bgw_artist.IsBusy)
-                    {
-                        bgw_artist.RunWorkerAsync();
-                        pbx_loading.Visible = true;
-               
-                    }
+                start_artist = true;
+                lb_result.Items.Clear();
+                info.Clear();
+
+                if (!bgw_artist.IsBusy)
+                {
+                    pbx_loading.Visible = true;
+                    bgw_artist.RunWorkerAsync();
+                    
+
                 }
 
-            if(rbt_album.Checked == true)
+            }
+
+            if (rbt_album.Checked == true)
             {
                 lb_result.Items.Clear();
                 info.Clear();
                 if (!bgw_album.IsBusy)
                 {
-                    bgw_album.RunWorkerAsync();
                     pbx_loading.Visible = true;
+                    bgw_album.RunWorkerAsync();
+                    
                 }
             }
 
-            if(rbt_track.Checked == true)
+            if (rbt_track.Checked == true)
             {
                 lb_result.Items.Clear();
                 info.Clear();
                 if (!bgw_track.IsBusy)
                 {
-                    bgw_track.RunWorkerAsync();
                     pbx_loading.Visible = true;
+                    bgw_track.RunWorkerAsync();
                     
+
                 }
             }
 
+            res = true;
         }
 
         private void rbt_artist_CheckedChanged(object sender, EventArgs e)
         {
+
             btn_preview.Enabled = false;
             btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581Disable21;
             axWindowsMediaPlayer1.URL = "";
@@ -178,18 +203,22 @@ namespace SMLoader
             {
                 btn_search_Click(sender, e);
             }
+
         }
 
         private void rbt_album_CheckedChanged(object sender, EventArgs e)
         {
+
+
             btn_preview.Enabled = false;
             btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581Disable21;
             axWindowsMediaPlayer1.URL = "";
             play = false;
             if (txb_search.Text != "" && res == true)
             {
-               btn_search_Click(sender, e);
+                btn_search_Click(sender, e);
             }
+
         }
 
         private void rbt_track_CheckedChanged(object sender, EventArgs e)
@@ -201,8 +230,8 @@ namespace SMLoader
                 btn_search_Click(sender, e);
             }
 
-            
-           // pbx_artist.Image = Resources.Music_2123892;
+
+            // pbx_artist.Image = Resources.Music_2123892;
 
         }
 
@@ -213,7 +242,7 @@ namespace SMLoader
                 e.Handled = true;
                 e.SuppressKeyPress = true;
 
-               btn_search_Click(sender, e);
+                btn_search_Click(sender, e);
 
             }
         }
@@ -246,15 +275,15 @@ namespace SMLoader
                     play = true;
                 }
 
-                else if(play == true)
+                else if (play == true)
                 {
                     axWindowsMediaPlayer1.URL = "";
                     btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581;
                     play = false;
                 }
-                
+
             }
-           
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -320,7 +349,7 @@ namespace SMLoader
         }
 
         private void cmb_limit_results_SelectedValueChanged(object sender, EventArgs e)
-        { 
+        {
             Settings.Default.results = cmb_limit_results.SelectedIndex;
             Settings.Default.Save();
         }
@@ -328,32 +357,32 @@ namespace SMLoader
 
         bool res;
 
-        
 
-//--------------------
-       
-//---------------------------
+
+        //--------------------
+
+        //---------------------------
 
         private void lb_result_DoubleClick(object sender, EventArgs e)
         {
-            
-                res = false;
 
-             
-                //  manager.discover(lb_result, rbt_artist, rbt_track, rbt_album, doc, infob, infoc, info, cmb_limit_results);
+            res = false;
 
-                if (rbt_artist.Checked == true)
-                {
+
+            //  manager.discover(lb_result, rbt_artist, rbt_track, rbt_album, doc, infob, infoc, info, cmb_limit_results);
+
+            if (rbt_artist.Checked == true)
+            {
 
                 //search = info[lb_result.SelectedIndex].name;
                 //  limit = cmb_limit_results.Text;
                 id = info[lb_result.SelectedIndex].id;
 
-             
+
                 rbt_album.Checked = true;
 
                 pbx_loading.Visible = true;
-             
+
 
                 manager.copyToBackupB(infob, info);
 
@@ -364,20 +393,20 @@ namespace SMLoader
                 // bgw_album.RunWorkerAsync();
                 bgw_album_double.RunWorkerAsync();
 
-                }
+            }
 
-                else if (rbt_album.Checked == true)
-                {
+            else if (rbt_album.Checked == true)
+            {
 
                 id = info[lb_result.SelectedIndex].id;
-                   // search = info[lb_result.SelectedIndex].name;
-                    //limit = cmb_limit_results.Text;
+                // search = info[lb_result.SelectedIndex].name;
+                //limit = cmb_limit_results.Text;
 
-                   
-                    rbt_track.Checked = true;
+
+                rbt_track.Checked = true;
 
                 pbx_loading.Visible = true;
-               
+
 
                 manager.copyToBackupC(infoc, info);
                 lastPos2 = lb_result.SelectedIndex;
@@ -389,46 +418,49 @@ namespace SMLoader
                 {
                     bgw_track_double.RunWorkerAsync();
                 }
-                }
+            }
 
 
-                if (lb_result.Items.Count > 0)
-                {
-                    lb_result.SelectedIndex = 0;
-                }
+            if (lb_result.Items.Count > 0)
+            {
+                lb_result.SelectedIndex = 0;
+            }
 
-           
-          
-            
+
+
+
 
             res = true;
-            
-            
+
+
         }
 
         bool start_artist = false;
-       
+
 
         private void btn_back_Click(object sender, EventArgs e)
         {
             res = false;
-            if(rbt_track.Checked == true)
+            if (rbt_track.Checked == true)
             {
                 manager.CToInfo(infoc, info, lb_result);
                 rbt_album.Checked = true;
                 lb_result.SelectedIndex = lastPos2;
             }
-            else if(rbt_album.Checked == true)
+            else if (rbt_album.Checked == true)
             {
-               
-                if(start_artist != false)
+
+                if (start_artist != false)
                 {
                     rbt_artist.Checked = true;
-                    lb_result.SelectedIndex = lastPos1;
+                    if (lb_result.Items.Count > 0)
+                    {
+                        lb_result.SelectedIndex = lastPos1;
+                    }
                     manager.BToInfo(infob, info, lb_result);
                 }
-               
-                
+
+
             }
 
             if (lb_result.Items.Count > 0 && lastPos1 == -1 && lastPos2 == -1)
@@ -436,32 +468,32 @@ namespace SMLoader
                 lb_result.SelectedIndex = 0;
             }
 
-           // MessageBox.Show(lastPos1.ToString() + " - " + lastPos2.ToString());
+            // MessageBox.Show(lastPos1.ToString() + " - " + lastPos2.ToString());
 
             res = true;
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-          
-            
+
+
         }
 
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        { 
+        {
         }
 
         private void bgw_artist_DoWork(object sender, DoWorkEventArgs e)
         {
-           
+
         }
 
         private void bgw_artist_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            
+
         }
 
-        XmlDocument doc = new XmlDocument();
+
 
         string a;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -472,7 +504,7 @@ namespace SMLoader
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-           
+
         }
 
         private void btn_sort_Click(object sender, EventArgs e)
@@ -485,33 +517,37 @@ namespace SMLoader
 
             foreach (var listbox in info)
             {
-               lb_result.Items.Add(i.ToString() + " " + listbox.name);
+                lb_result.Items.Add(i.ToString() + " " + listbox.name);
                 i++;
             }
         }
 
         private void bgw_artist_DoWork_1(object sender, DoWorkEventArgs e)
         {
-            
-                    doc.Load("https://api.deezer.com/search/artist/?q=" + search + "&index=0&limit=" + limit + "&output=xml");
-                    XmlElement root = doc.DocumentElement;
-                    XmlNodeList nodes = root.SelectNodes("/root/data/artist");
+            XmlDocument doc = new XmlDocument();
+            doc.Load("https://api.deezer.com/search/artist/?q=" + search + "&index=0&limit=" + limit + "&output=xml");
 
-               
-                    foreach (XmlNode node in nodes)
-                    {
+            //XmlElement root = doc.DocumentElement;
 
-                        info.Add(new list.Info()
-                        {
-                            name = node["name"].InnerText,
-                            link = node["link"].InnerText,
-                            id = node["id"].InnerText,
-                            picture = node["picture_medium"].InnerText
-                        });
+            XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/data/artist");
 
-                    }
-               
-            
+            //root.SelectNodes("/root/data/artist");
+
+
+            foreach (XmlNode node in nodes)
+            {
+
+                info.Add(new list.Info()
+                {
+                    name = node["name"].InnerText,
+                    link = node["link"].InnerText,
+                    id = node["id"].InnerText,
+                    picture = node["picture_medium"].InnerText
+                });
+
+            }
+
+
         }
 
         private void bgw_artist_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
@@ -534,11 +570,16 @@ namespace SMLoader
 
         private void bgw_album_DoWork(object sender, DoWorkEventArgs e)
         {
+            XmlDocument doc = new XmlDocument();
             doc.Load("https://api.deezer.com/search/album/?q=" + search + "&index=0&limit=" + limit + "&output=xml");
-            XmlElement root = doc.DocumentElement;
-            XmlNodeList nodes = root.SelectNodes("/root/data/album");
 
-   
+
+
+            XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/data/album");
+            //XmlElement root = doc.DocumentElement;
+            // XmlNodeList nodes = root.SelectNodes("");
+
+
             foreach (XmlNode node in nodes)
             {
 
@@ -584,15 +625,12 @@ namespace SMLoader
 
         private void bgw_track_DoWork(object sender, DoWorkEventArgs e)
         {
+            XmlDocument doc = new XmlDocument();
             doc.Load("https://api.deezer.com/search/?q=" + search + "&index=0&output=xml");
-            XmlElement root = doc.DocumentElement;
-            XmlNodeList nodes = root.SelectNodes("/root/data/track");
-
-            // copyToBackupB(infoB, info);
+            XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/data/track");
 
             foreach (XmlNode node in nodes)
             {
-
                 info.Add(new list.Info()
                 {
                     name = node["title"].InnerText,
@@ -637,10 +675,10 @@ namespace SMLoader
 
         private void bgw_track_double_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            XmlDocument doc = new XmlDocument();
             doc.Load("http://api.deezer.com/album/" + id + "&index=0&output=xml");
-            XmlElement root = doc.DocumentElement;
-            XmlNodeList nodes = root.SelectNodes("/root/tracks/data/track");
+
+            XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/tracks/data/track");
 
             // copyToBackupB(infoB, info);
 
@@ -677,9 +715,10 @@ namespace SMLoader
 
         private void bgw_album_double_DoWork(object sender, DoWorkEventArgs e)
         {
-            doc.Load("http://api.deezer.com/artist/"+id+"/albums&output=xml");
-            XmlElement root = doc.DocumentElement;
-            XmlNodeList nodes = root.SelectNodes("/root/data/album");
+            XmlDocument doc = new XmlDocument();
+            doc.Load("http://api.deezer.com/artist/" + id + "/albums&output=xml");
+
+            XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/data/album");
 
             // copyToBackupB(infoB, info);
 
@@ -693,7 +732,7 @@ namespace SMLoader
                     picture = node["cover_medium"].InnerText,
                     id = node["id"].InnerText,
                     record_type = node["record_type"].InnerText
-                    
+
 
                 });
 
@@ -729,20 +768,85 @@ namespace SMLoader
 
         private void bgw_search_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-          
+            int i = 1;
+            foreach (var listbox in info)
+            {
+                lb_result.Items.Add(i.ToString() + " " + listbox.name);
+                i++;
+            }
+            pbx_loading.Visible = false;
+
+
+            if (lb_result.Items.Count > 0)
+            {
+                lb_result.SelectedIndex = 0;
+            }
         }
+
+        string xmln;
 
         private void bgw_search_DoWork(object sender, DoWorkEventArgs e)
         {
-           
-            
+
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("http://api.deezer.com/chart/&limit=" + limit + "&output=xml");
+
+            XmlNodeList nodes = doc.DocumentElement.SelectNodes(xmln);
+
+            // copyToBackupB(infoB, info);
+
+            foreach (XmlNode node in nodes)
+            {
+
+                info.Add(new list.Info()
+                {
+                    name = node["name"].InnerText,
+                    link = node["link"].InnerText,
+                    picture = node["picture_medium"].InnerText,
+                    id = node["id"].InnerText
+
+
+
+                });
+
+            }
+
+        }
+
+        private void lbl_link_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(lbl_link.Text);
+            MessageBox.Show("Link Copied");
+        }
+
+        private void lbl_link_MouseEnter(object sender, EventArgs e)
+        {
+            if (lbl_link.Text != "")
+            {
+                lbl_link.BackColor = Color.Gray;
+            }
+        }
+
+        private void lbl_link_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_link.BackColor = Color.Transparent;
+        }
+
+        private void txb_search_Click(object sender, EventArgs e)
+        {
+            if (chart == true)
+            {
+                txb_search.Text = "";
+                chart = false;
+            }
         }
     }
 }
 
-    
-    
 
 
-    
+
+
+
 

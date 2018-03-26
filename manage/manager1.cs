@@ -15,7 +15,7 @@ namespace SMLoader.manage
     {
 
 
-        public void download(TextBox search, ComboBox quality, ListBox result, Process download, List<list.Info> info)
+        public void download(Label status, TextBox search, ComboBox quality, ListBox result, Process download, List<list.Info> info)
         {
             string qualitys = "";
 
@@ -42,8 +42,10 @@ namespace SMLoader.manage
                 if (Settings.Default.sm != "")
                 {
                     download.StartInfo.FileName = Settings.Default.sm;
-                    string a = @"-q " + qualitys + " -p " + Settings.Default.download + " " + info[result.SelectedIndex].link + "";
+                    string a = " -q " + qualitys + " -p " + Settings.Default.download + " " + info[result.SelectedIndex].link;
                     download.StartInfo.Arguments = a;
+                    //status.Text = a;
+                    
                 }
 
             }

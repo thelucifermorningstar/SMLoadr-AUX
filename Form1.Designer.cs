@@ -74,7 +74,8 @@
             this.bgw_check_version = new System.ComponentModel.BackgroundWorker();
             this.bgw_track_double = new System.ComponentModel.BackgroundWorker();
             this.bgw_album_double = new System.ComponentModel.BackgroundWorker();
-            this.bgw_search = new System.ComponentModel.BackgroundWorker();
+            this.bgw_chart = new System.ComponentModel.BackgroundWorker();
+            this.lbl_link = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -114,6 +115,7 @@
             this.txb_search.Name = "txb_search";
             this.txb_search.Size = new System.Drawing.Size(600, 27);
             this.txb_search.TabIndex = 5;
+            this.txb_search.Click += new System.EventHandler(this.txb_search_Click);
             this.txb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_search_KeyDown);
             // 
             // lb_result
@@ -199,6 +201,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lbl_link);
             this.tabPage1.Controls.Add(this.pbx_loading);
             this.tabPage1.Controls.Add(this.lbl_info);
             this.tabPage1.Controls.Add(this.lbl_status);
@@ -254,7 +257,7 @@
             this.lbl_status.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status.Location = new System.Drawing.Point(4, 342);
             this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(351, 15);
+            this.lbl_status.Size = new System.Drawing.Size(350, 15);
             this.lbl_status.TabIndex = 24;
             this.lbl_status.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -769,10 +772,23 @@
             this.bgw_album_double.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_album_double_DoWork);
             this.bgw_album_double.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_album_double_RunWorkerCompleted);
             // 
-            // bgw_search
+            // bgw_chart
             // 
-            this.bgw_search.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_search_DoWork);
-            this.bgw_search.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_search_RunWorkerCompleted);
+            this.bgw_chart.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_search_DoWork);
+            this.bgw_chart.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_search_RunWorkerCompleted);
+            // 
+            // lbl_link
+            // 
+            this.lbl_link.BackColor = System.Drawing.Color.White;
+            this.lbl_link.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_link.Location = new System.Drawing.Point(418, 345);
+            this.lbl_link.Name = "lbl_link";
+            this.lbl_link.Size = new System.Drawing.Size(229, 15);
+            this.lbl_link.TabIndex = 28;
+            this.lbl_link.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_link.Click += new System.EventHandler(this.lbl_link_Click);
+            this.lbl_link.MouseEnter += new System.EventHandler(this.lbl_link_MouseEnter);
+            this.lbl_link.MouseLeave += new System.EventHandler(this.lbl_link_MouseLeave);
             // 
             // Form1
             // 
@@ -847,7 +863,8 @@
         private System.ComponentModel.BackgroundWorker bgw_track_double;
         private System.ComponentModel.BackgroundWorker bgw_album_double;
         private System.Windows.Forms.PictureBox pbx_background;
-        private System.ComponentModel.BackgroundWorker bgw_search;
+        private System.ComponentModel.BackgroundWorker bgw_chart;
+        private System.Windows.Forms.Label lbl_link;
     }
 }
 
