@@ -58,5 +58,17 @@ namespace SMLoader.Properties {
                 this["sm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public int results {
+            get {
+                return ((int)(this["results"]));
+            }
+            set {
+                this["results"] = value;
+            }
+        }
     }
 }

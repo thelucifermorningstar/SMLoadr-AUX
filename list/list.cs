@@ -6,26 +6,33 @@ using System.Threading.Tasks;
 
 namespace SMLoader.list
 {
-   public class Artist
+    public class Info
     {
         public string name { get; set; }
         public string link { get; set; }
-        public string pic { get; set; }
+        public string picture { get; set; }
+        public string preview { get; set; }
+        public string id { get; set; }
+        public string record_type { get; set; }
     }
 
-    public class Album
+    public class InfoB
     {
-        public string title { get; set; }
+        public string name { get; set; }
         public string link { get; set; }
-        public string pic { get; set; }
-        public string artist { get; set; }
-        public string tracks { get; set; }
+        public string picture { get; set; }
+        public string preview { get; set; }
+        public string id { get; set; }
+        public string record_type { get; set; }
     }
-    
-    public class Track
+
+    public class InfoC
     {
-        public string title { get; set;}
+        public string name { get; set; }
         public string link { get; set; }
-        public string mp3 { get; set; }
+        public string picture { get; set; }
+        public string preview { get; set; }
+        public string id { get; set; }
+        public string record_type { get; set; }
     }
 }
