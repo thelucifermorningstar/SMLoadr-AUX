@@ -134,7 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -151,10 +150,100 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Roboto-Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Roboto-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="SMLoader_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\3d-icons\back-button-disabled.png" />
+    <None Include="Resources\3d-icons\back-button-up_disabled.png" />
+    <None Include="Resources\3d-icons\gui-settings\empty-cover-v2.png" />
+    <None Include="Resources\3d-icons\gui-settings\copy-monero-mouse-over.png" />
+    <None Include="Resources\3d-icons\gui-settings\copy-ethereum-mouse-over.png" />
+    <None Include="Resources\3d-icons\gui-settings\copy-bitcoin-mouse-over.png" />
+    <None Include="Resources\3d-icons\gui-settings\reset-mouse-over.png" />
+    <None Include="Resources\3d-icons\gui-settings\reset-button-down.png" />
+    <None Include="Resources\3d-icons\gui-settings\open-mouse-over.png" />
+    <None Include="Resources\3d-icons\gui-settings\open-button-down.png" />
+    <None Include="Resources\3d-icons\gui-settings\change-mouse-over.png" />
+    <None Include="Resources\3d-icons\gui-settings\change-button-down.png" />
+    <None Include="Resources\3d-icons\gui-settings\copy-ethereum-button-up.png" />
+    <None Include="Resources\3d-icons\gui-settings\copy-bitcoin-button-up.png" />
+    <None Include="Resources\3d-icons\gui-settings\copy-monero-button-up.png" />
+    <None Include="Resources\3d-icons\gui-settings\downloadbar.png" />
+    <None Include="Resources\3d-icons\gui-settings\executablebar.png" />
+    <None Include="Resources\3d-icons\gui-settings\reset-button-up.png" />
+    <None Include="Resources\3d-icons\gui-settings\open-button-up.png" />
+    <None Include="Resources\3d-icons\gui-settings\change-button-up.png" />
+    <None Include="Resources\3d-icons\play-button-up_playing.png" />
+    <None Include="Resources\3d-icons\searchbar-v2-button-down.png" />
+    <None Include="Resources\3d-icons\searchbar-v2-button-up.png" />
+    <None Include="Other\15221975457509298.png" />
+    <None Include="Resources\3d-icons\textbar-empty.png" />
+    <None Include="Resources\3d-icons\smloadr-aux-favicon-v2.png" />
+    <None Include="Resources\3d-icons\topbar\topbar-mouse-over.png" />
+    <None Include="Resources\3d-icons\topbar\topbar-empty.png" />
+    <None Include="Resources\3d-icons\topbar\topbar-button-down.png" />
+    <None Include="Resources\3d-icons\topbar\minimize-mouse-over.png" />
+    <None Include="Resources\3d-icons\topbar\minimize-button-up.png" />
+    <None Include="Resources\3d-icons\topbar\minimize-button-down.png" />
+    <None Include="Resources\3d-icons\topbar\maximize-mouse-over.png" />
+    <None Include="Resources\3d-icons\topbar\maximize-button-up.png" />
+    <None Include="Resources\3d-icons\topbar\maximize-button-down.png" />
+    <None Include="Resources\3d-icons\topbar\close-mouse-over.png" />
+    <None Include="Resources\3d-icons\topbar\close-button-down.png" />
+    <None Include="Resources\3d-icons\icon.png" />
+    <None Include="Resources\3d-icons\topbar\close-button-up1.png" />
+    <None Include="Resources\3d-icons\topbar\close-button-up.png" />
+    <None Include="Resources\3d-icons\topbar\topbar-button-up.png" />
+    <None Include="Resources\3d-icons\close-button-down.png" />
+    <None Include="Resources\3d-icons\close-button-up.png" />
+    <None Include="Resources\3d-icons\load.gif" />
+    <None Include="Resources\3d-icons\settings-button-down.png" />
+    <None Include="Resources\3d-icons\radio-mouse-over.png" />
+    <None Include="Resources\3d-icons\radio-button-up.png" />
+    <None Include="Resources\3d-icons\radio-button-down.png" />
+    <None Include="Resources\3d-icons\play-mouse-over.png" />
+    <None Include="Resources\3d-icons\play-button-down.png" />
+    <None Include="Resources\3d-icons\limit-results-mouse-over.png" />
+    <None Include="Resources\3d-icons\limit-results-button-up.png" />
+    <None Include="Resources\3d-icons\limit-results-button-down.png" />
+    <None Include="Resources\3d-icons\home-mouse-over.png" />
+    <None Include="Resources\3d-icons\home-button-up.png" />
+    <None Include="Resources\3d-icons\download-mouse-over.png" />
+    <None Include="Resources\3d-icons\download-button-down.png" />
+    <None Include="Resources\3d-icons\back-mouse-over.png" />
+    <None Include="Resources\3d-icons\back-button-down.png" />
+    <None Include="Resources\3d-icons\back-button-up.png" />
+    <None Include="Resources\3d-icons\result-field.png" />
+    <None Include="Resources\3d-icons\searchbar-button-down.png" />
+    <None Include="Resources\3d-icons\searchbar-button-up.png" />
+    <None Include="Resources\3d-icons\play-button-up.png" />
+    <None Include="Resources\3d-icons\download-button-up.png" />
+    <None Include="Resources\3d-icons\empty-cover.png" />
+    <None Include="Resources\3d-icons\settings-mouse-over.png" />
+    <None Include="Resources\3d-icons\home-button-down.png" />
+    <None Include="Resources\3d-icons\settings-button-up.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
@@ -174,46 +263,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cd-icon-46229.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="favicon.ico" />
-    <None Include="Resources\32x32\if_178_Download_183297.png" />
-    <None Include="Resources\32x32\if_play-circle-fill_326581Disable2.png" />
-    <None Include="Resources\32x32\if_play-circle-fill_326581Disable.png" />
-    <None Include="Resources\32x32\if_206_CircledStop_183323.png" />
-    <None Include="Resources\32x32\if_play-circle-fill_326581.png" />
-    <None Include="Resources\32x32\if_9-Cancel_2123880.png" />
-    <None Include="Resources\32x32\giphy.gif" />
-    <None Include="Resources\32x32\Music_2123892.png" />
-    <None Include="Resources\32x32\if_92-Music_2123892.png" />
-    <None Include="Resources\32x32\if_91-Play_2123935 %281%29.png" />
-    <None Include="Resources\32x32\if_91-Play_2123935.png" />
-    <None Include="Resources\32x32\if_play_227568.png" />
-    <None Include="Resources\32x32\eye.png" />
-    <None Include="Resources\32x32\download.png" />
-    <None Include="Resources\32x32\search2.png" />
-    <None Include="Resources\32x32\search.png" />
-    <None Include="Resources\dsf.png" />
-    <None Include="Resources\if_12-Download_2123950.png" />
-    <None Include="Resources\if_32-Search_2123956.png" />
-    <None Include="Resources\if_search-find-magnify-glass_2203508.png" />
-    <None Include="Resources\arrow_back_black_192x192.png" />
-    <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

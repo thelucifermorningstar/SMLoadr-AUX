@@ -13,7 +13,7 @@ namespace SMLoader.new_release
     {
         public void check()
         {
-            string url = "https://github.com/thelucifermorningstar/SMLoadr-AUX/releases/download/1.0.2/SMA_1.0.2_x64.zip";
+            string url = "https://github.com/thelucifermorningstar/SMLoadr-AUX/releases/download/1.0.3/SMA_1.0.3_x64.zip";
             WebRequest request = WebRequest.Create(url);
 
             try

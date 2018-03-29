@@ -13,6 +13,7 @@ using System.Xml;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Drawing.Text;
 
 namespace SMLoader
 {
@@ -21,6 +22,7 @@ namespace SMLoader
         public Form1()
         {
             InitializeComponent();
+
 
 
             bgw_check_version.RunWorkerAsync();
@@ -40,8 +42,7 @@ namespace SMLoader
 
             }
 
-            txb_download_folder.Text = Settings.Default.download;
-            txb_SM_exe.Text = Settings.Default.sm;
+
 
             if (Settings.Default.sm == "")
             {
@@ -50,13 +51,68 @@ namespace SMLoader
             }
 
 
+            //Custom Font
 
-            txb_search.Text = "Chart";
+
+
+
+
+            pfc.AddFontFile("Roboto-Black.ttf");
+            pfc.AddFontFile("Roboto-Regular.ttf");
+
+
+
+            lb_result.Font = load_font(pfc, 11, Roboto);
+            rbt_artist.Font = load_font(pfc, 12, Roboto_Black);
+            rbt_album.Font = load_font(pfc, 12, Roboto_Black);
+            txb_search.Font = load_font(pfc, 12, Roboto);
+            cmb_limit_results.Font = load_font(pfc, 11, Roboto);
+            lbl_title.Font = load_font(pfc, 10, Roboto_Black);
+            lbl_title2.Font = load_font(pfc, 10, Roboto_Black);
+            lbl_path.Font = load_font(pfc, 10, Roboto_Black);
+
+            tabPage1.Font = load_font(pfc, 12, Roboto);
+
+
+            tabPage2.Font = load_font(pfc, 12, Roboto);
+            label5.Font = load_font(pfc, 12, Roboto_Black);
+            label4.Font = load_font(pfc, 12, Roboto_Black);
+            label1.Font = load_font(pfc, 12, Roboto_Black);
+            button1.Font = load_font(pfc, 12, Roboto_Black);
+            panel8.Font = load_font(pfc, 12, Roboto);
+            btn_download_folder.Font = load_font(pfc, 12, Roboto_Black);
+            btn_open_download_folder.Font = load_font(pfc, 12, Roboto_Black);
+            btn_reset.Font = load_font(pfc, 12, Roboto_Black);
+            label2.Font = load_font(pfc, 12, Roboto_Black);
+            label3.Font = load_font(pfc, 12, Roboto);
+            cmb_quality.Font = load_font(pfc, 12, Roboto);
+            btn_monero_add.Font = load_font(pfc, 12, Roboto_Black);
+            btn_bitcoin_add.Font = load_font(pfc, 12, Roboto_Black);
+            btn_ether_add.Font = load_font(pfc, 12, Roboto_Black);
+
+
+
+            txb_search.Select();
+
+            //Chart load
+            //start_artist = true;
             chart = true;
             limit = cmb_limit_results.Text;
             xmln = "/root/artists/data/artist";
             bgw_chart.RunWorkerAsync();
 
+
+            txb_download_folder.Text = Settings.Default.download;
+            txb_SM_exe.Text = Settings.Default.sm;
+        }
+
+        PrivateFontCollection pfc = new PrivateFontCollection();
+        string Roboto = "Roboto";
+        string Roboto_Black = "Roboto Black";
+
+        public Font load_font(PrivateFontCollection fc, int size, string name)
+        {
+            return new Font(fc.Families.Where(x => x.Name == name).FirstOrDefault(), size, FontStyle.Regular);
         }
 
         bool chart;
@@ -74,11 +130,11 @@ namespace SMLoader
 
         private void btn_go_Click(object sender, EventArgs e)
         {
-            if (txb_search.Text != "" && lb_result.Items.Count > 0)
+            if (lb_result.Items.Count > 0)
             {
                 if (Settings.Default.sm != "")
                 {
-                    manager.download(lbl_status, txb_search, cmb_quality, lb_result, download, info);
+                    manager.download(txb_search, cmb_quality, lb_result, download, info);
                 }
                 else
                 {
@@ -86,6 +142,7 @@ namespace SMLoader
                     tabControl1.SelectTab(tabControl1.TabPages[1]);
                 }
             }
+
 
         }
 
@@ -98,37 +155,65 @@ namespace SMLoader
 
         private void lb_result_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+
+
+            if (lb_result.SelectedIndex >= 0)
             {
-                if (rbt_track.Checked == true)
+                pbx_artist.ImageLocation = info[lb_result.SelectedIndex].picture;
+                browseOnWebToolStripMenuItem.Text = "Go to " + info[lb_result.SelectedIndex].link;
+            }
+
+                /*
+                try
                 {
-                    if (lb_result.SelectedIndex >= 0)
+                    
+                }
+                catch
+                {
+
+                }
+
+                try
+                {
+                    if (track == true)
                     {
-                        pbx_artist.ImageLocation = infoc[lastPos2].picture;
-                        lbl_status.Text = "Download: " + info[lb_result.SelectedIndex].name;
-                        lbl_info.Text = infoc[lastPos2].name;
-                        lbl_link.Text = info[lb_result.SelectedIndex].link;
-                        if (play == true)
+                        if (lb_result.SelectedIndex >= 0)
                         {
-                            axWindowsMediaPlayer1.URL = info[lb_result.SelectedIndex].preview;
+
+                            pbx_artist.ImageLocation = infoc[lastPos2].picture;
+                            if (play == true)
+                            {
+                                axWindowsMediaPlayer1.URL = info[lb_result.SelectedIndex].preview;
+                            }
+
+
                         }
                     }
-                }
-                else
-                {
-                    if (lb_result.SelectedIndex >= 0)
+                    else
                     {
-                        lbl_link.Text = info[lb_result.SelectedIndex].link;
                         pbx_artist.ImageLocation = info[lb_result.SelectedIndex].picture;
-                        lbl_status.Text = "Download: " + info[lb_result.SelectedIndex].name;
-                        lbl_info.Text = info[lb_result.SelectedIndex].name;
                     }
+
+                    if (rbt_track.Checked == true)
+                    {
+                        pbx_artist.ImageLocation = info[lb_result.SelectedIndex].picture;
+                        //pbx_artist.Image = Resources.empty_cover_v2;
+                    }
+
+                    /* else
+                     {
+                         if (lb_result.SelectedIndex >= 0)
+                         {
+                             this.lb_result.Invalidate();
+                             pbx_artist.ImageLocation = info[lb_result.SelectedIndex].picture;
+
+                         }
+                     }
                 }
+                catch
+                {
+                }*/
             }
-            catch
-            {
-            }
-        }
 
 
         List<list.Info> info = new List<list.Info>();
@@ -142,61 +227,74 @@ namespace SMLoader
         private void btn_search_Click(object sender, EventArgs e)
         {
 
-            search = txb_search.Text;
-            limit = cmb_limit_results.Text;
-
-            res = false;
-
-
-            if (rbt_artist.Checked == true)
+            if (txb_search.Text != "")
             {
-                start_artist = true;
-                lb_result.Items.Clear();
-                info.Clear();
 
-                if (!bgw_artist.IsBusy)
+                search = txb_search.Text;
+                limit = cmb_limit_results.Text;
+
+                res = false;
+
+
+                if (rbt_artist.Checked == true)
                 {
-                    pbx_loading.Visible = true;
-                    bgw_artist.RunWorkerAsync();
-                    
+
+                    lb_result.Items.Clear();
+                    info.Clear();
+
+                    if (!bgw_artist.IsBusy)
+                    {
+                        pbx_loading.Visible = true;
+                        bgw_artist.RunWorkerAsync();
+
+
+                    }
 
                 }
 
-            }
-
-            if (rbt_album.Checked == true)
-            {
-                lb_result.Items.Clear();
-                info.Clear();
-                if (!bgw_album.IsBusy)
+                if (rbt_album.Checked == true)
                 {
-                    pbx_loading.Visible = true;
-                    bgw_album.RunWorkerAsync();
-                    
-                }
-            }
+                    lb_result.Items.Clear();
+                    info.Clear();
+                    if (!bgw_album.IsBusy)
+                    {
+                        pbx_loading.Visible = true;
+                        bgw_album.RunWorkerAsync();
 
-            if (rbt_track.Checked == true)
-            {
-                lb_result.Items.Clear();
-                info.Clear();
-                if (!bgw_track.IsBusy)
+                    }
+                }
+
+                if (rbt_track.Checked == true)
                 {
-                    pbx_loading.Visible = true;
-                    bgw_track.RunWorkerAsync();
-                    
+                    lb_result.Items.Clear();
+                    info.Clear();
+                    if (!bgw_track.IsBusy)
+                    {
+                        pbx_loading.Visible = true;
+                        bgw_track.RunWorkerAsync();
 
+
+                    }
                 }
-            }
 
-            res = true;
+                res = true;
+            }
         }
 
         private void rbt_artist_CheckedChanged(object sender, EventArgs e)
         {
-
+            artist = true;
+            album = false;
+            track = false;
             btn_preview.Enabled = false;
-            btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581Disable21;
+            lbl_path.Text = "Artist";
+            btn_preview.BackgroundImage = Resources.play_button_up;
+
+            //Radio
+            rb_album.BackgroundImage = Resources.radio_button_up;
+            rb_artist.BackgroundImage = Resources.radio_button_down;
+            rb_track.BackgroundImage = Resources.radio_button_up;
+
             axWindowsMediaPlayer1.URL = "";
             play = false;
             if (txb_search.Text != "" && res == true)
@@ -209,9 +307,22 @@ namespace SMLoader
         private void rbt_album_CheckedChanged(object sender, EventArgs e)
         {
 
+            artist = false;
+            album = true;
+            track = false;
+
+            infob.Clear();
+
+            lbl_path.Text = "Albuns";
 
             btn_preview.Enabled = false;
-            btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581Disable21;
+            btn_preview.BackgroundImage = Resources.play_button_up;
+
+            //Radio
+            rb_album.BackgroundImage = Resources.radio_button_down;
+            rb_artist.BackgroundImage = Resources.radio_button_up;
+            rb_track.BackgroundImage = Resources.radio_button_up;
+
             axWindowsMediaPlayer1.URL = "";
             play = false;
             if (txb_search.Text != "" && res == true)
@@ -219,32 +330,40 @@ namespace SMLoader
                 btn_search_Click(sender, e);
             }
 
+            res = true;
         }
 
         private void rbt_track_CheckedChanged(object sender, EventArgs e)
         {
+            artist = false;
+            album = false;
+            track = true;
+            infoc.Clear();
+            lbl_path.Text = "Tracks";
+
             btn_preview.Enabled = true;
-            btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581;
+
+
+            //Radio
+            rb_album.BackgroundImage = Resources.radio_button_up;
+            rb_artist.BackgroundImage = Resources.radio_button_up;
+            rb_track.BackgroundImage = Resources.radio_button_down;
+
+
             if (txb_search.Text != "" && res == true)
             {
                 btn_search_Click(sender, e);
+                pbx_artist.Image = Resources.empty_cover_v2;
             }
 
 
-            // pbx_artist.Image = Resources.Music_2123892;
+
 
         }
 
         private void txb_search_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                e.SuppressKeyPress = true;
 
-                btn_search_Click(sender, e);
-
-            }
         }
 
         private void btn_download_folder_Click(object sender, EventArgs e)
@@ -268,19 +387,9 @@ namespace SMLoader
             if (lb_result.SelectedIndex >= 0)
             {
 
-                if (play == false)
-                {
-                    axWindowsMediaPlayer1.URL = info[lb_result.SelectedIndex].preview;
-                    btn_preview.BackgroundImage = Resources.if_206_CircledStop_183323;
-                    play = true;
-                }
+                axWindowsMediaPlayer1.URL = info[lb_result.SelectedIndex].preview;
+                btn_preview.BackgroundImage = Resources.play_button_down;
 
-                else if (play == true)
-                {
-                    axWindowsMediaPlayer1.URL = "";
-                    btn_preview.BackgroundImage = Resources.if_play_circle_fill_326581;
-                    play = false;
-                }
 
             }
 
@@ -357,29 +466,52 @@ namespace SMLoader
 
         bool res;
 
+        bool artist = true;
+        bool album, track;
 
 
         //--------------------
 
         //---------------------------
 
+        string art;
+        string alb;
         private void lb_result_DoubleClick(object sender, EventArgs e)
         {
 
-            res = false;
+            // res = false;
 
 
-            //  manager.discover(lb_result, rbt_artist, rbt_track, rbt_album, doc, infob, infoc, info, cmb_limit_results);
+            // manager.discover(lb_result, rbt_artist, rbt_track, rbt_album, doc, infob, infoc, info, cmb_limit_results);
 
-            if (rbt_artist.Checked == true)
+            if (artist == true)
             {
+                album = true;
+                artist = false;
+                track = false;
+                start_artist = true;
+
+
+                //panel_double_click.Visible = true;
+
+                art = "Albuns by " + lb_result.Text;
+
+                lbl_path.Text = art;
+
+
+
+
+                btn_back.Enabled = true;
+
+                btn_back.BackgroundImage = Resources.back_button_up;
+
 
                 //search = info[lb_result.SelectedIndex].name;
-                //  limit = cmb_limit_results.Text;
+                // limit = cmb_limit_results.Text;
                 id = info[lb_result.SelectedIndex].id;
 
 
-                rbt_album.Checked = true;
+
 
                 pbx_loading.Visible = true;
 
@@ -395,15 +527,32 @@ namespace SMLoader
 
             }
 
-            else if (rbt_album.Checked == true)
+            else if (album == true)
             {
+                album = false;
+                artist = false;
+                track = true;
+                btn_preview.Enabled = true;
+
+                btn_back.Enabled = true;
+
+                btn_back.BackgroundImage = Resources.back_button_up;
+
+                alb = "Tracks from " + lb_result.Text;
+
+                lbl_path.Text = alb;
+
+                
+
+
+
 
                 id = info[lb_result.SelectedIndex].id;
                 // search = info[lb_result.SelectedIndex].name;
                 //limit = cmb_limit_results.Text;
 
 
-                rbt_track.Checked = true;
+
 
                 pbx_loading.Visible = true;
 
@@ -418,6 +567,7 @@ namespace SMLoader
                 {
                     bgw_track_double.RunWorkerAsync();
                 }
+
             }
 
 
@@ -440,26 +590,80 @@ namespace SMLoader
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            res = false;
-            if (rbt_track.Checked == true)
+            if (track == true)
             {
-                manager.CToInfo(infoc, info, lb_result);
-                rbt_album.Checked = true;
-                lb_result.SelectedIndex = lastPos2;
-            }
-            else if (rbt_album.Checked == true)
-            {
+                artist = false;
+                album = true;
+                track = false;
+                btn_preview.Enabled = false;
+                axWindowsMediaPlayer1.URL = "";
+                lbl_path.Text = art;
 
-                if (start_artist != false)
+
+                if (start_artist == false)
                 {
-                    rbt_artist.Checked = true;
-                    if (lb_result.Items.Count > 0)
-                    {
-                        lb_result.SelectedIndex = lastPos1;
-                    }
-                    manager.BToInfo(infob, info, lb_result);
+                    
+                    timer1.Start();
+                    //btn_back.BackgroundImage = Resources.back_button_disabled;
+                    //btn_back.Enabled = false;
+                    start_artist = false;
                 }
 
+                if (infoc.Count <= 0)
+                {
+                    if (txb_search.Text != "")
+                    {
+                        rbt_album.Checked = true;
+                        btn_search_Click(sender, e);
+
+                    }
+                }
+                else
+                {
+                    manager.CToInfo(infoc, info, lb_result);
+                    lb_result.SelectedIndex = lastPos2;
+                }
+
+
+
+                //
+            }
+            else if (album == true)
+            {
+
+                artist = true;
+                album = false;
+                track = false;
+
+                
+                timer1.Start();
+                //btn_back.BackgroundImage = Resources.back_button_disabled;
+                 //btn_back.Enabled = false;
+                start_artist = false;
+                lbl_path.Text = "Search Results";
+
+
+
+
+                if (infob.Count <= 0)
+                {
+                    if (txb_search.Text != "")
+                    {
+                        rbt_artist.Checked = true;
+                        btn_search_Click(sender, e);
+                    }
+                }
+                else
+                {
+                    manager.BToInfo(infob, info, lb_result);
+                    lb_result.SelectedIndex = lastPos1;
+                }
+
+
+
+
+
+                //
 
             }
 
@@ -495,7 +699,7 @@ namespace SMLoader
 
 
 
-        string a;
+        // string a;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
@@ -517,7 +721,7 @@ namespace SMLoader
 
             foreach (var listbox in info)
             {
-                lb_result.Items.Add(i.ToString() + " " + listbox.name);
+                lb_result.Items.Add(listbox.name);
                 i++;
             }
         }
@@ -552,17 +756,19 @@ namespace SMLoader
 
         private void bgw_artist_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
         {
-            int i = 1;
+
 
             foreach (var listbox in info)
             {
-                lb_result.Items.Add(i.ToString() + " " + listbox.name);
-                i++;
+                lb_result.Items.Add(listbox.name);
             }
             pbx_loading.Visible = false;
 
+            lbl_path.Text = "Results for '" + txb_search.Text+  "'";
+
             if (lb_result.Items.Count > 0)
             {
+
                 lb_result.SelectedIndex = 0;
             }
 
@@ -589,7 +795,8 @@ namespace SMLoader
                     link = node["link"].InnerText,
                     picture = node["cover_medium"].InnerText,
                     id = node["id"].InnerText,
-                    record_type = node["record_type"].InnerText
+                    record_type = node["record_type"].InnerText,
+                    artist = node.SelectSingleNode("artist/name").InnerText
 
 
                 });
@@ -599,27 +806,28 @@ namespace SMLoader
 
         private void bgw_album_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            int i = 1;
+
 
             foreach (var listbox in info)
             {
-                if (listbox.record_type != "album")
-                {
-                    lb_result.Items.Add(i.ToString() + " " + listbox.name + " (" + listbox.record_type + ")");
-                }
-                else
-                {
-                    lb_result.Items.Add(i.ToString() + " " + listbox.name);
-                }
-                i++;
+                
+                    lb_result.Items.Add(listbox.name);
+               
+
             }
             pbx_loading.Visible = false;
 
+            art = "Albuns by '" + txb_search.Text + "'";
+            lbl_path.Text = art;
 
             if (lb_result.Items.Count > 0)
             {
+
                 lb_result.SelectedIndex = 0;
+               
             }
+
+            
 
         }
 
@@ -629,13 +837,17 @@ namespace SMLoader
             doc.Load("https://api.deezer.com/search/?q=" + search + "&index=0&output=xml");
             XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/data/track");
 
+
             foreach (XmlNode node in nodes)
             {
                 info.Add(new list.Info()
                 {
                     name = node["title"].InnerText,
                     link = node["link"].InnerText,
-                    preview = node["preview"].InnerText
+                    preview = node["preview"].InnerText,
+                    picture = node.SelectSingleNode("artist/picture_medium").InnerText, 
+                    album = node.SelectSingleNode("album/title").InnerText
+                    //artist = node.SelectSingleNode("artist/picture_medium").InnerText
                 });
 
             }
@@ -643,20 +855,28 @@ namespace SMLoader
 
         private void bgw_track_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            int i = 1;
+
 
             foreach (var listbox in info)
             {
-                lb_result.Items.Add(i.ToString() + " " + listbox.name);
-                i++;
+                lb_result.Items.Add(listbox.name);
+
             }
             pbx_loading.Visible = false;
+
+            alb = "Tracks by '" + txb_search.Text + "'";
+            lbl_path.Text = alb;
+
 
 
             if (lb_result.Items.Count > 0)
             {
+
                 lb_result.SelectedIndex = 0;
+
             }
+
+
 
         }
 
@@ -689,7 +909,9 @@ namespace SMLoader
                 {
                     name = node["title"].InnerText,
                     link = node["link"].InnerText,
-                    preview = node["preview"].InnerText
+                    preview = node["preview"].InnerText,
+                    picture = node.SelectSingleNode("/root/cover_medium").InnerText,
+                    album = node.SelectSingleNode("/root/title").InnerText
                 });
 
             }
@@ -697,18 +919,17 @@ namespace SMLoader
 
         private void bgw_track_double_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            int i = 1;
 
             foreach (var listbox in info)
             {
-                lb_result.Items.Add(i.ToString() + " " + listbox.name);
-                i++;
+                lb_result.Items.Add(listbox.name);
             }
-            pbx_loading.Visible = false;
 
+            pbx_loading.Visible = false;
 
             if (lb_result.Items.Count > 0)
             {
+
                 lb_result.SelectedIndex = 0;
             }
         }
@@ -716,15 +937,13 @@ namespace SMLoader
         private void bgw_album_double_DoWork(object sender, DoWorkEventArgs e)
         {
             XmlDocument doc = new XmlDocument();
+
             doc.Load("http://api.deezer.com/artist/" + id + "/albums&output=xml");
 
             XmlNodeList nodes = doc.DocumentElement.SelectNodes("/root/data/album");
 
-            // copyToBackupB(infoB, info);
-
             foreach (XmlNode node in nodes)
             {
-
                 info.Add(new list.Info()
                 {
                     name = node["title"].InnerText,
@@ -732,35 +951,29 @@ namespace SMLoader
                     picture = node["cover_medium"].InnerText,
                     id = node["id"].InnerText,
                     record_type = node["record_type"].InnerText
-
-
                 });
-
             }
         }
 
         private void bgw_album_double_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            int i = 1;
-
             foreach (var listbox in info)
             {
                 if (listbox.record_type != "album")
                 {
-                    lb_result.Items.Add(i.ToString() + " " + listbox.name + " (" + listbox.record_type + ")");
+                    lb_result.Items.Add(listbox.name + " (" + listbox.record_type + ")");
                 }
                 else
                 {
-                    lb_result.Items.Add(i.ToString() + " " + listbox.name);
+                    lb_result.Items.Add(listbox.name);
                 }
-                //lb_result.Items.Add(i.ToString() + " " + listbox.name);
-                i++;
             }
 
             pbx_loading.Visible = false;
 
             if (lb_result.Items.Count > 0)
             {
+
                 lb_result.SelectedIndex = 0;
             }
 
@@ -768,14 +981,13 @@ namespace SMLoader
 
         private void bgw_search_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            int i = 1;
             foreach (var listbox in info)
             {
-                lb_result.Items.Add(i.ToString() + " " + listbox.name);
-                i++;
+                lb_result.Items.Add(listbox.name);
             }
             pbx_loading.Visible = false;
 
+            lbl_path.Text = "Chart";
 
             if (lb_result.Items.Count > 0)
             {
@@ -787,14 +999,10 @@ namespace SMLoader
 
         private void bgw_search_DoWork(object sender, DoWorkEventArgs e)
         {
-
-
             XmlDocument doc = new XmlDocument();
             doc.Load("http://api.deezer.com/chart/&limit=" + limit + "&output=xml");
 
             XmlNodeList nodes = doc.DocumentElement.SelectNodes(xmln);
-
-            // copyToBackupB(infoB, info);
 
             foreach (XmlNode node in nodes)
             {
@@ -806,8 +1014,6 @@ namespace SMLoader
                     picture = node["picture_medium"].InnerText,
                     id = node["id"].InnerText
 
-
-
                 });
 
             }
@@ -816,21 +1022,17 @@ namespace SMLoader
 
         private void lbl_link_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(lbl_link.Text);
-            MessageBox.Show("Link Copied");
+
         }
 
         private void lbl_link_MouseEnter(object sender, EventArgs e)
         {
-            if (lbl_link.Text != "")
-            {
-                lbl_link.BackColor = Color.Gray;
-            }
+
         }
 
         private void lbl_link_MouseLeave(object sender, EventArgs e)
         {
-            lbl_link.BackColor = Color.Transparent;
+
         }
 
         private void txb_search_Click(object sender, EventArgs e)
@@ -841,8 +1043,694 @@ namespace SMLoader
                 chart = false;
             }
         }
+
+        private void btn_settings_MouseEnter(object sender, EventArgs e)
+        {
+            btn_settings.BackgroundImage = Resources.settings_mouse_over;
+        }
+
+        private void btn_settings_MouseLeave(object sender, EventArgs e)
+        {
+            btn_settings.BackgroundImage = Resources.settings_button_up;
+        }
+
+        private void btn_search_MouseDown(object sender, MouseEventArgs e)
+        {
+            //btn_search.BackgroundImage = Resources.searchbar_button_down;
+        }
+
+        private void btn_search_MouseUp(object sender, MouseEventArgs e)
+        {
+            //btn_search.BackgroundImage = Resources.searchbar_button_up;
+        }
+
+        private void btn_go_MouseEnter(object sender, EventArgs e)
+        {
+            btn_go.BackgroundImage = Resources.download_mouse_over;
+        }
+
+        private void btn_go_MouseLeave(object sender, EventArgs e)
+        {
+            btn_go.BackgroundImage = Resources.download_button_up;
+        }
+
+        private void btn_go_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_go.BackgroundImage = Resources.download_button_down;
+        }
+
+        private void btn_go_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_go.BackgroundImage = Resources.download_button_up;
+        }
+
+        private void btn_back_MouseEnter(object sender, EventArgs e)
+        {
+            btn_back.BackgroundImage = Resources.back_mouse_over;
+        }
+
+        private void btn_back_MouseLeave(object sender, EventArgs e)
+        {
+
+            btn_back.BackgroundImage = Resources.back_button_up;
+        
+    }
+
+        private void btn_preview_MouseEnter(object sender, EventArgs e)
+        {
+            if (play != true)
+            {
+                btn_preview.BackgroundImage = Resources.play_mouse_over;
+            }
+        }
+
+        private void btn_preview_MouseLeave(object sender, EventArgs e)
+        {
+            if (axWindowsMediaPlayer1.playState != WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                btn_preview.BackgroundImage = Resources.play_button_up;
+            }
+            else
+            {
+                btn_preview.BackgroundImage = Resources.play_button_up_playing;
+            }
+            
+        }
+
+        private void txb_search_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                btn_search_Click(sender, e);
+
+            }
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            //tabControl1.SelectedTab = tabPage2;
+           
+            tabControl1.SelectTab(1);
+        }
+
+        private void btn_tmain_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void btn_tmain_MouseEnter(object sender, EventArgs e)
+        {
+            btn_tmain.BackgroundImage = Resources.home_mouse_over;
+        }
+
+        private void btn_tmain_MouseLeave(object sender, EventArgs e)
+        {
+            btn_tmain.BackgroundImage = Resources.home_button_up;
+        }
+
+        private void rb_album_Click(object sender, EventArgs e)
+        {
+            rbt_album.Checked = true;
+        }
+
+        private void rb_artist_Click_1(object sender, EventArgs e)
+        {
+            rbt_artist.Checked = true;
+        }
+
+        private void rb_album_Click_1(object sender, EventArgs e)
+        {
+            rbt_album.Checked = true;
+        }
+
+        private void rb_track_Click_1(object sender, EventArgs e)
+        {
+            rbt_track.Checked = true;
+        }
+
+        private void rb_artist_MouseEnter_1(object sender, EventArgs e)
+        {
+            if (rbt_artist.Checked == false)
+            {
+                rb_artist.BackgroundImage = Resources.radio_mouse_over;
+            }
+        }
+
+        private void rb_artist_MouseLeave_1(object sender, EventArgs e)
+        {
+            if (rbt_artist.Checked == false)
+            {
+                rb_artist.BackgroundImage = Resources.radio_button_up;
+            }
+        }
+
+        private void rb_album_MouseEnter(object sender, EventArgs e)
+        {
+            if (rbt_album.Checked == false)
+            {
+                rb_album.BackgroundImage = Resources.radio_mouse_over;
+            }
+        }
+
+        private void rb_album_MouseLeave(object sender, EventArgs e)
+        {
+            if (rbt_album.Checked == false)
+            {
+                rb_album.BackgroundImage = Resources.radio_button_up;
+            }
+        }
+
+        private void rb_track_MouseEnter(object sender, EventArgs e)
+        {
+            if (rbt_track.Checked == false)
+            {
+                rb_track.BackgroundImage = Resources.radio_mouse_over;
+            }
+        }
+
+        private void rb_track_MouseLeave(object sender, EventArgs e)
+        {
+            if (rbt_track.Checked == false)
+            {
+                rb_track.BackgroundImage = Resources.radio_button_up;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cmb_Click(object sender, EventArgs e)
+        {
+            cmb_limit_results.DroppedDown = true;
+
+        }
+
+        private void btn_cmb_MouseEnter(object sender, EventArgs e)
+        {
+            btn_cmb.BackgroundImage = Resources.limit_results_mouse_over;
+        }
+
+        private void btn_cmb_MouseLeave(object sender, EventArgs e)
+        {
+            btn_cmb.BackgroundImage = Resources.limit_results_button_up;
+        }
+
+        private void btn_cmb_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_cmb.BackgroundImage = Resources.limit_results_button_down;
+        }
+
+        private void btn_cmb_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_cmb.BackgroundImage = Resources.limit_results_button_up;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_close_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_close_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_close2_Click(object sender, EventArgs e)
+        {
+            btn_close_Click(sender, e);
+        }
+
+        private void btn_close2_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_close2_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        //Move Fomr
+        bool moving;
+        Point offset;
+        Point original;
+
+        private void panel_title_bar_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (!moving)
+                return;
+
+            int x = original.X + MousePosition.X - offset.X;
+            int y = original.Y + MousePosition.Y - offset.Y;
+
+            this.Location = new Point(x, y);
+        }
+
+        private void panel_title_bar_MouseDown(object sender, MouseEventArgs e)
+        {
+            moving = true;
+            panel_title_bar.Capture = true;
+            offset = MousePosition;
+            original = this.Location;
+
+        }
+
+        private void panel_title_bar_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            moving = false;
+            panel_title_bar.Capture = false;
+        }
+
+        private void panel_title_bar2_MouseDown(object sender, MouseEventArgs e)
+        {
+            moving = true;
+            panel_title_bar2.Capture = true;
+            offset = MousePosition;
+            original = this.Location;
+        }
+
+        private void panel_title_bar2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!moving)
+                return;
+
+            int x = original.X + MousePosition.X - offset.X;
+            int y = original.Y + MousePosition.Y - offset.Y;
+
+            this.Location = new Point(x, y);
+        }
+
+        private void panel_title_bar2_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            moving = false;
+            panel_title_bar2.Capture = false;
+        }
+
+        private void btn_back_MouseDown(object sender, MouseEventArgs e)
+        {
+            //btn_back.BackgroundImage = Resources.back_button_down;
+        }
+
+        private void btn_back_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (btn_back.Enabled == false)
+            {
+                btn_back.BackgroundImage = Resources.back_button_up;
+            }
+        }
+
+        private void btn_close_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Leave(object sender, EventArgs e)
+        {
+            panel_title_bar.BackgroundImage = Resources.topbar_button_down;
+        }
+
+        private void btn_close_Click_2(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_close_MouseEnter_1(object sender, EventArgs e)
+        {
+            btn_close.BackgroundImage = Resources.close_mouse_over;
+        }
+
+        private void btn_close_MouseLeave_1(object sender, EventArgs e)
+        {
+            btn_close.BackgroundImage = Resources.close_button_up1;
+        }
+
+        private void btn_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_minimize_MouseEnter(object sender, EventArgs e)
+        {
+            btn_minimize.BackgroundImage = Resources.minimize_mouse_over;
+        }
+
+        private void btn_minimize_MouseLeave(object sender, EventArgs e)
+        {
+            btn_minimize.BackgroundImage = Resources.minimize_button_up;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txb_search_Leave(object sender, EventArgs e)
+        {
+            txb_search.ForeColor = Color.FromArgb(84, 84, 84);
+            btn_search.BackgroundImage = Resources.searchbar_v2_button_up;
+        }
+
+        private void txb_search_Enter(object sender, EventArgs e)
+        {
+            txb_search.ForeColor = Color.FromArgb(0,120,215);
+            btn_search.BackgroundImage = Resources.searchbar_v2_button_down;
+
+        }
+
+        private void lb_result_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            /* int index = e.Index;
+             Graphics g = e.Graphics;
+             foreach (int selectedIndex in this.lb_result.SelectedIndices)
+             {
+                 if (index == selectedIndex)
+                 {
+                     // Draw the new background colour
+                     e.DrawBackground();
+                     g.FillRectangle(new SolidBrush(Color.FromArgb(28, 28, 30)), e.Bounds);
+                 }
+             }
+
+             // Get the item details
+             Font font = lb_result.Font;
+             Color colour = lb_result.ForeColor;
+             string text = lb_result.Items[index].ToString();
+
+             // Print the text
+             g.DrawString(text, font, new SolidBrush(Color.White), (float)e.Bounds.X, (float)e.Bounds.Y);
+             e.DrawFocusRectangle();   */
+
+        }
+
+        private void lb_result_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+        }
+
+        private void panel_title_bar2_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            moving = true;
+            panel_title_bar2.Capture = true;
+            offset = MousePosition;
+            original = this.Location;
+        }
+
+        private void panel_title_bar2_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (!moving)
+                return;
+
+            int x = original.X + MousePosition.X - offset.X;
+            int y = original.Y + MousePosition.Y - offset.Y;
+
+            this.Location = new Point(x, y);
+        }
+
+        private void panel_title_bar2_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            moving = false;
+            panel_title_bar2.Capture = false;
+        }
+
+        private void btn_close2_Click_1(object sender, EventArgs e)
+        {
+            btn_close_Click(sender,e);
+        }
+
+        private void btn_close2_MouseEnter_1(object sender, EventArgs e)
+        {
+            btn_close2.BackgroundImage = Resources.close_mouse_over;
+        }
+
+        private void btn_close2_MouseLeave_1(object sender, EventArgs e)
+        {
+            btn_close2.BackgroundImage = Resources.close_button_up1;
+        }
+
+        private void btn_minimize2_Click(object sender, EventArgs e)
+        {
+            btn_minimize_Click(sender, e);
+        }
+
+        private void btn_minimize2_MouseEnter(object sender, EventArgs e)
+        {
+            btn_minimize2.BackgroundImage = Resources.minimize_mouse_over;
+        }
+
+        private void btn_minimize2_MouseLeave(object sender, EventArgs e)
+        {
+            btn_minimize2.BackgroundImage = Resources.minimize_button_up;
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = Resources.change_mouse_over;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = Resources.change_button_up;
+        }
+
+        private void btn_download_folder_MouseEnter(object sender, EventArgs e)
+        {
+            btn_download_folder.BackgroundImage = Resources.change_mouse_over;
+        }
+
+        private void btn_download_folder_MouseLeave(object sender, EventArgs e)
+        {
+            btn_download_folder.BackgroundImage = Resources.change_button_up;
+        }
+
+        private void btn_open_download_folder_MouseEnter(object sender, EventArgs e)
+        {
+            btn_open_download_folder.BackgroundImage = Resources.open_mouse_over;
+        }
+
+        private void btn_open_download_folder_MouseLeave(object sender, EventArgs e)
+        {
+            btn_open_download_folder.BackgroundImage = Resources.open_button_up;
+        }
+
+        private void btn_reset_MouseEnter(object sender, EventArgs e)
+        {
+            btn_reset.BackgroundImage = Resources.reset_mouse_over;
+        }
+
+        private void btn_reset_MouseLeave(object sender, EventArgs e)
+        {
+            btn_reset.BackgroundImage = Resources.reset_button_up;
+        }
+
+        private void browseOnWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lb_result.SelectedIndex >= 0)
+            {
+                Process.Start(info[lb_result.SelectedIndex].link);
+            }
+        }
+
+        private void lb_result_MouseDown(object sender, MouseEventArgs e)
+        {
+            lb_result.SelectedIndex = lb_result.IndexFromPoint(e.X, e.Y);
+        }
+
+        private int x = 0;
+        private int y = 100;
+
+        string ping;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (btn_back.Enabled == true)
+            {
+                btn_back.BackgroundImage = Resources.back_button_disabled;
+                btn_back.Enabled = false;
+                timer1.Stop();
+            }
+        }
+
+        private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if(axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                btn_preview.BackgroundImage = Resources.play_button_up_playing;
+            }
+            else
+            {
+                btn_preview.BackgroundImage = Resources.play_button_up;
+
+            }
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            button1.BackgroundImage = Resources.change_button_down;
+        }
+
+        private void button1_MouseUp(object sender, MouseEventArgs e)
+        {
+            button1.BackgroundImage = Resources.change_button_up;
+        }
+
+        private void btn_download_folder_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_download_folder.BackgroundImage = Resources.change_button_down;
+        }
+
+        private void btn_download_folder_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_download_folder.BackgroundImage = Resources.change_button_up;
+        }
+
+        private void btn_open_download_folder_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_open_download_folder.BackgroundImage = Resources.open_button_down;
+        }
+
+        private void btn_open_download_folder_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_open_download_folder.BackgroundImage = Resources.open_button_up;
+        }
+
+        private void btn_reset_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_reset.BackgroundImage = Resources.reset_button_down;
+        }
+
+        private void btn_reset_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_reset.BackgroundImage = Resources.reset_button_up;
+        }
+
+        private void btn_bitcoin_add_MouseEnter(object sender, EventArgs e)
+        {
+            btn_bitcoin_add.BackgroundImage = Resources.copy_bitcoin_mouse_over;
+        }
+
+        private void btn_bitcoin_add_MouseLeave(object sender, EventArgs e)
+        {
+            btn_bitcoin_add.BackgroundImage = Resources.copy_bitcoin_button_up;
+        }
+
+        private void btn_ether_add_MouseEnter(object sender, EventArgs e)
+        {
+            btn_ether_add.BackgroundImage = Resources.copy_ethereum_mouse_over;
+        }
+
+        private void btn_ether_add_MouseLeave(object sender, EventArgs e)
+        {
+            btn_ether_add.BackgroundImage = Resources.copy_ethereum_button_up;
+        }
+
+        private void btn_monero_add_MouseEnter(object sender, EventArgs e)
+        {
+            btn_monero_add.BackgroundImage = Resources.copy_monero_mouse_over;
+        }
+
+        private void btn_back_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_result_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rbt_artist2_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void rbt_album2_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void rbt_track_2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rb_track2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void rb_album2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rb_artist2_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void rbt_artist2_Click(object sender, EventArgs e)
+        {
+           
+
+            /*rb_artist2.BackgroundImage = Resources.radio_button_down;
+            rb_album2.BackgroundImage = Resources.radio_button_up;
+            rb_track2.BackgroundImage = Resources.radio_button_up;*/
+        }
+
+        private void rbt_album2_Click(object sender, EventArgs e)
+        {
+           
+            /*rb_artist2.BackgroundImage = Resources.radio_button_up;
+            rb_album2.BackgroundImage = Resources.radio_button_down;
+            rb_track2.BackgroundImage = Resources.radio_button_up;*/
+        }
+
+        private void rbt_track_2_Click(object sender, EventArgs e)
+        {
+            rb_track2_Click(sender, e);
+        }
+
+        private void btn_monero_add_MouseLeave(object sender, EventArgs e)
+        {
+            btn_monero_add.BackgroundImage = Resources.copy_monero_button_up;
+        }
     }
 }
+
 
 
 

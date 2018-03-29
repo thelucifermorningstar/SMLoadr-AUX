@@ -14,6 +14,8 @@ namespace SMLoader.list
         public string preview { get; set; }
         public string id { get; set; }
         public string record_type { get; set; }
+        public string artist { get; set; }
+        public string album { get; set; }
     }
 
     public class InfoB
@@ -24,6 +26,8 @@ namespace SMLoader.list
         public string preview { get; set; }
         public string id { get; set; }
         public string record_type { get; set; }
+        public string artist { get; set; }
+        public string album { get; set; }
     }
 
     public class InfoC
@@ -34,5 +38,7 @@ namespace SMLoader.list
         public string preview { get; set; }
         public string id { get; set; }
         public string record_type { get; set; }
+        public string artist { get; set; }
+        public string album { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using SMLoader.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace SMLoader.manage
     {
 
 
-        public void download(Label status, TextBox search, ComboBox quality, ListBox result, Process download, List<list.Info> info)
+        public void download(TextBox search, ComboBox quality, ListBox result, Process download, List<list.Info> info)
         {
             string qualitys = "";
 
@@ -36,16 +37,15 @@ namespace SMLoader.manage
             }
 
 
-            if (search.Text != "" && result.SelectedIndex >= 0)
+            if (result.SelectedIndex >= 0)
             {
 
                 if (Settings.Default.sm != "")
                 {
                     download.StartInfo.FileName = Settings.Default.sm;
                     string a = " -q " + qualitys + " -p " + Settings.Default.download + " " + info[result.SelectedIndex].link;
+                    Debug.Write(a);
                     download.StartInfo.Arguments = a;
-                    //status.Text = a;
-                    
                 }
 
             }
@@ -105,7 +105,7 @@ namespace SMLoader.manage
 
             foreach (var listbox in info)
             {
-                result.Items.Add(i.ToString() + " " + listbox.name);
+                result.Items.Add(listbox.name);
                 i++;
             }
         }
@@ -129,13 +129,18 @@ namespace SMLoader.manage
 
             foreach (var listbox in info)
             {
-                result.Items.Add(i.ToString() + " " + listbox.name);
+                result.Items.Add(listbox.name);
                 i++;
             }
         }
 
 
-    
+    public void mouseHover(Control c, Color col)
+        {
+
+         
+
+        }
 
 
            
