@@ -43,7 +43,9 @@ namespace SMLoader.manage
                 if (Settings.Default.sm != "")
                 {
                     download.StartInfo.FileName = Settings.Default.sm;
-                    string a = " -q " + qualitys + " -p " + Settings.Default.download + " " + info[result.SelectedIndex].link;
+                    string path = Settings.Default.download;
+                    path = path.Replace(@"\", @"/");
+                    string a = " -q " + qualitys + " -p " + "\"" + path + "\"" + " " + "\"" + info[result.SelectedIndex].link+ "\"";
                     Debug.Write(a);
                     download.StartInfo.Arguments = a;
                 }
