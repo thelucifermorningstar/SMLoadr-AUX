@@ -154,9 +154,6 @@
   <data name="reset-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3d-icons\gui-settings\reset-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="15221975457509298" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Other\15221975457509298.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="settings_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3d-icons\settings-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
