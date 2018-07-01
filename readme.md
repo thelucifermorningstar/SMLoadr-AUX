@@ -10,7 +10,7 @@ How to use:
 
 ![See Image](https://imgur.com/0gCepgH.png)  
 
-2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/bhSRa3Q.png)  
+2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/yvtwtiy.png)  
 
 3 - Ready to Search Music ![See Image](https://imgur.com/i99zs1F.png)  
 
