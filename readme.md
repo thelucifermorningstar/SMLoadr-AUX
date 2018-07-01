@@ -6,13 +6,13 @@ How to use:
 
 1 - Open the program ![See Image](https://imgur.com/tztgURK.png)  
 
-[See Image](https://imgur.com/0gCepgH.png)  
+![See Image](https://imgur.com/0gCepgH.png)  
 
 2 - Select a SMLoadr executable Location ([Download SMLoadr](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/bhSRa3Q.png)  
 
 3 - Ready to Search Music ![See Image](https://imgur.com/i99zs1F.png)  
 
-4 - You can double click the artist to see the albuns, and double click albums to see tracks ![See Image](https://imgur.com/95HlqyU.png) 
+4 - You can double click the artist to see the albums, and double click albums to see tracks ![See Image](https://imgur.com/95HlqyU.png) 
 
 5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/hxBvmQK.png)
 
