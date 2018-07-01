@@ -1,6 +1,6 @@
 This tool allow you to search artists, albums and tracks and send to **SMLoadr** with a command line.  
 
-**OBS.: This software do not download music. The main function is search artists/albums/tracks and send to SMLoadr!**  
+**OBS.: This software do not download music. The main function is search artists/albums/tracks/playlists and send to SMLoadr!**  
 
 How to use: 
 
@@ -8,7 +8,7 @@ How to use:
 
 ![See Image](https://imgur.com/0gCepgH.png)  
 
-2 - Select a SMLoadr executable Location ([Download SMLoadr](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/bhSRa3Q.png)  
+2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/bhSRa3Q.png)  
 
 3 - Ready to Search Music ![See Image](https://imgur.com/i99zs1F.png)  
 
@@ -16,7 +16,7 @@ How to use:
 
 5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/hxBvmQK.png)
 
-6 - Select the artist/album/track, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/pxuketn.png)  
+6 - Select the artist/album/track/playlist, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/pxuketn.png)  
 
 
 
