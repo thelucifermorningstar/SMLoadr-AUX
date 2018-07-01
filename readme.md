@@ -16,9 +16,9 @@ How to use:
 
 4 - You can double click the artist to see the albums, and double click albums to see tracks ![See Image](https://imgur.com/95HlqyU.png) 
 
-5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/hxBvmQK.png)
+5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/aSfrWvJ.png)
 
-6 - Select the artist/album/track/playlist, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/pxuketn.png)  
+6 - Select the artist/album/track/playlist, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/Vga9jqr.png)  
 
 
 
