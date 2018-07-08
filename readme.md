@@ -6,19 +6,19 @@ This software does not download music. The main function is search artists/album
 How to use: 
 
 1 - Open the app, SMLoadr AUX.exe
-![See Image](https://imgur.com/tztgURK.png)  
+![See Image](https://imgur.com/meKxCg9.png)  
 
-![See Image](https://imgur.com/0gCepgH.png)  
+![See Image](https://imgur.com/jxvWKRf.png)  
 
-2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/yvtwtiy.png)  
+2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.teknik.io/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/uuH8JFj.png)  
 
-3 - Ready to Search Music ![See Image](https://imgur.com/i99zs1F.png)  
+3 - Ready to Search Music ![See Image](https://imgur.com/ExUvmX2.png)  
 
-4 - You can double click the artist to see the albums, and double click albums to see tracks ![See Image](https://imgur.com/95HlqyU.png) 
+4 - You can double click the artist to see the albums, and double click albums to see tracks ![See Image](https://imgur.com/H1dep5V.png) 
 
-5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/aSfrWvJ.png)
+5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/y2unQg5.png)
 
-6 - Select the artist/album/track/playlist, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/Vga9jqr.png)  
+6 - Select the artist/album/track/playlist, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/WdCAJtx.png)  
 
 
 
