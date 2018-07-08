@@ -37,4 +37,4 @@ Set free some souls today: Donate!
 **Contact: themorningstarproject666@gmail.com**
 
 Cheers,  
-The Devil ;)
+Lucifer
