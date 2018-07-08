@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SMLoader.list
+namespace SMLoadrAUX.list
 {
     public class Info
     {
@@ -16,6 +16,10 @@ namespace SMLoader.list
         public string record_type { get; set; }
         public string artist { get; set; }
         public string album { get; set; }
+        public string duration { get; set; }
+        public string playlist { get; set; }
+        public string url { get; set; }
+        
     }
 
     public class InfoB
@@ -28,6 +32,10 @@ namespace SMLoader.list
         public string record_type { get; set; }
         public string artist { get; set; }
         public string album { get; set; }
+        public string duration { get; set; }
+        public string playlist { get; set; }
+        public string url { get; set; }
+        
     }
 
     public class InfoC
@@ -40,5 +48,8 @@ namespace SMLoader.list
         public string record_type { get; set; }
         public string artist { get; set; }
         public string album { get; set; }
+        public string duration { get; set; }
+        public string playlist { get; set; }
+        public string url { get; set; }
     }
 }

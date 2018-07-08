@@ -119,207 +119,174 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="minimize_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\minimize-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\gui\topbar\minimize-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\download-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="searchbar_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\searchbar-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\gui\search\download-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\play-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="radio_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\radio-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\gui\search\play-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="copy_monero_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-monero-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="topbar_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\topbar-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="limit_results_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\limit-results-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\open-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\back-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copy_bitcoin_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-bitcoin-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reset-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\reset-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="15221975457509298" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Other\15221975457509298.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\settings-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="download_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\download-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="topbar_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\topbar-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\close-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maximize_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\maximize-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copy_ethereum_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-ethereum-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_button_up1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\close-button-up1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\play-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="searchbar_v2_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\searchbar-v2-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="empty-cover-v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\empty-cover-v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copy-ethereum-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-ethereum-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reset_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\reset-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="change_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\change-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="radio_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\radio-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copy-monero-button-up1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-monero-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copy-monero-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-monero-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="download_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\download-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reset_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\reset-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\home-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_button_down1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\close-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimize_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\minimize-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="result_field" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\result-field.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="textbar-empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\textbar-empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="smloadr-aux-favicon-v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\smloadr-aux-favicon-v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="limit_results_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\limit-results-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="limit_results_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\limit-results-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="load" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\load.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\play-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\home-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\settings-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\settings-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maximize_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\maximize-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="change-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\change-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\open-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\open-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="searchbar-v2-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\searchbar-v2-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play_button_up_playing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\play-button-up_playing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="executablebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\executablebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="downloadbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\downloadbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="searchbar_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\searchbar-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back-button-up_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\back-button-up_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\back-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maximize_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\maximize-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="change_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\change-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="topbar_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\topbar-empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimize_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\minimize-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="empty_cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\empty-cover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="radio_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\radio-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="topbar_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\topbar\topbar-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\gui\settings\copy-monero-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\back-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\gui\search\back-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="copy-bitcoin-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\copy-bitcoin-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="limit_results_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\limit-results-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="change-button-up1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\gui-settings\change-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SMLoadrAUXIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\overlap\SMLoadrAUXIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\home-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="open_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\open-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\back-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_bitcoin_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\copy-bitcoin-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reset-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\reset-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-version" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\text-version.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\download-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\topbar\close-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back-button-disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3d-icons\back-button-disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\gui\search\back-button-disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_ethereum_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\copy-ethereum-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\topbar\close-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\play-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="searchbar_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\searchbar-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty-cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\empty-cover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy-ethereum-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\copy-ethereum-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reset_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\reset-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="change_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\change-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-track" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\text-track.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="limit_results_button_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\limit-results-button-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy-monero-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\copy-monero-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\download-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reset_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\reset-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-playlist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\text-playlist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\overlap\SearchButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-executable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\text-executable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="limit_results_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\limit-results-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\load.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\play-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\overlap\SearchButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingsButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\overlap\SettingsButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="change-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\change-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\open-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\open-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-album" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\text-album.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-downloadquality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\text-downloadquality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="searchbar-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\searchbar-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play_button_up_playing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\play-button-up_playing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="executablebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\executablebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downloadbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\downloadbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy-bitcoin-button-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\copy-bitcoin-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_button_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\back-button-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="change_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\change-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="topbar_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\topbar\topbar-empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize_mouse_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\topbar\minimize-mouse-over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-search-big" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\text-search-big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-settings-big" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\text-settings-big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-downloadfolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\text-downloadfolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-donate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\settings\text-donate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingsButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\overlap\SettingsButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-artist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\text-artist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-url" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui\search\text-url.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

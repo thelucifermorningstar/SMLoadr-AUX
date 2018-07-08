@@ -1,5 +1,5 @@
-﻿using SMLoader.list;
-using SMLoader.Properties;
+﻿using SMLoadrAUX.list;
+using SMLoadrAUX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,13 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
-namespace SMLoader.manage
+namespace SMLoadrAUX.manage
 {
     class manager1
     {
-
-
         public void download(TextBox search, ComboBox quality, ListBox result, Process download, List<list.Info> info)
         {
             string qualitys = "";
@@ -42,8 +41,19 @@ namespace SMLoader.manage
 
                 if (Settings.Default.sm != "")
                 {
+
+                    // Check the download path before download [the download folder could be a usb that has been removed or disconnected]
+                    if (!Directory.Exists(Settings.Default.download))
+                    {
+                        MessageBox.Show("Path " + Settings.Default.download + " not found or inaccessible.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     download.StartInfo.FileName = Settings.Default.sm;
-                    string a = " -q " + qualitys + " -p " + Settings.Default.download + " " + info[result.SelectedIndex].link;
+
+                    // Add double quotes with "\"" to pass path with white spaces
+                    string a = " -q " + qualitys + " -p " + "\"" + Settings.Default.download + "\"" + " " + info[result.SelectedIndex].link;
                     Debug.Write(a);
                     download.StartInfo.Arguments = a;
                 }
@@ -141,11 +151,6 @@ namespace SMLoader.manage
          
 
         }
-
-
-           
-        
-
     }
 }
 
