@@ -3,6 +3,9 @@ This tool allows you to search artists, albums, tracks & playlists... and sends 
 **NOTE:
 This software does not download music. The main function is search artists/albums/tracks/playlists and send to SMLoadr!**  
 
+[![Watch the video](https://i.imgur.com/bjct5cH.png)](https://youtu.be/vCGWIjxYKkg)
+
+
 How to use: 
 
 1 - Open the app, SMLoadr AUX.exe
