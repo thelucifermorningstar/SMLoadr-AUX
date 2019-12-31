@@ -3,30 +3,39 @@ This tool allows you to search artists, albums, tracks & playlists... and sends 
 **NOTE:
 This software does not download music. The main function is search artists/albums/tracks/playlists and send to SMLoadr!**  
 
-[![Watch the video](https://i.imgur.com/bjct5cH.png)](https://youtu.be/vCGWIjxYKkg)
+[![Watch the video](https://imgur.com/bjct5cH.png)](https://youtu.be/brGIct0G8ME)
 
 
 How to use: 
 
 1 - Open the app, SMLoadr AUX.exe
-![See Image](https://imgur.com/meKxCg9.png)  
 
-![See Image](https://imgur.com/jxvWKRf.png)  
+![See Image](https://imgur.com/JNvk6M5.png)  
 
-2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.fuwafuwa.moe/SMLoadrDev/SMLoadr/releases)) ![See Image](https://imgur.com/uuH8JFj.png)  
+2 - Select the SMLoadr executable Location ([**Download SMLoadr**](https://git.fuwafuwa.moe/SMLoadrDev/SMLoadr/releases)) 
 
-3 - Ready to Search Music ![See Image](https://imgur.com/ExUvmX2.png)  
+![See Image](https://imgur.com/jYTYoZE.png)  
 
-4 - You can double click the artist to see the albums, and double click albums to see tracks ![See Image](https://imgur.com/H1dep5V.png) 
+3 - Ready to Search Music
 
-5 - If you're in tracks, you can preview songs clicking on play button ![See Image](https://imgur.com/y2unQg5.png)
+![See Image](https://imgur.com/Y68kpyW.png)  
 
-6 - Select the artist/album/track/playlist, click the Download button to send to SMLoadr and wait the conclusion! ![See Image](https://imgur.com/WdCAJtx.png)  
+4 - You can double click the artist to see the albums, and double click albums to see tracks
 
+![See Image](https://imgur.com/Ki9Vus3.png) 
 
+5 - If you're in tracks, you can preview songs clicking on play button
 
+![See Image](https://imgur.com/Lr5huaP.png)
 
-7 - It's done!  
+6 - Select the artist/album/track/playlist/url, click the Download button to send to SMLoadr and wait the conclusion!
+
+![See Image](https://imgur.com/Ioy0fXW.png)  
+
+7 - Or use the right-click menu to add to/clear or download downloadLinks.txt & more.
+
+![See Image](https://imgur.com/TfDQ9EX.png)  
+
 
 # [DOWNLOAD](https://github.com/thelucifermorningstar/SMLoadr-AUX/releases)  
 
