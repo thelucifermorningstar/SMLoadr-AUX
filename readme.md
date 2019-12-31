@@ -6,7 +6,7 @@ This software does not download music. The main function is search artists/album
 [![Watch the video](https://imgur.com/bjct5cH.png)](https://youtu.be/brGIct0G8ME)
 
 
-**How to use: **
+**How to use:**
 
 **1 -** Open the app, SMLoadr AUX.exe
 
